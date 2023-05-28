@@ -1,3 +1,11 @@
 az acr create -n anilavvaru -g acr-rg --sku Basic
 az acr list -o table
+az acr update -n anilavvaru --admin-enabled true
+az acr credential show --name anilavvaru
+docker login anilavvaru.azurecr.io
+docker ps
+docker tag productsservice:dev anilavvaru.azurecr.io/samples/productservice
+docker push anilavvaru.azurecr.io/samples/productservice
+
+az acr repository delete -n anilavvaru --image samples/productservice:latest
 az acr delete -n anilavvaru
