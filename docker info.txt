@@ -1,0 +1,11 @@
+docker-compose build --no-cache
+docker-compose up
+docker-compose up -d
+docker-compose ps
+docker-compose down
+docker network ls
+docker exec -it <containerid> sh
+docker exec -it -u root 8c6 sh
+  ping api
+  ifconfig
+  
